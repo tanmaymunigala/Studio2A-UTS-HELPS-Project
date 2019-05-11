@@ -12,12 +12,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using uts_helps_system.api.Data;
+using uts_helps_system.api.ResourceManagement;
 
 namespace UTS_HELPS_System.API
 {
     public class Startup
     {
-        private const string DatabaseConnectionString = @"Server=localhost\SQLEXPRESS;Database=Uts_Helps_Core;Trusted_Connection=True;";
 
         public Startup(IConfiguration configuration)
         {
@@ -29,7 +29,7 @@ namespace UTS_HELPS_System.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(DatabaseConnectionString));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(CentralResourceManagement.DatabaseConnectionString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

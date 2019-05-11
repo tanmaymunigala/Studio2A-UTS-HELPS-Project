@@ -5,6 +5,7 @@ using uts_helps_system.api.Enums;
 using uts_helps_system.api.Security.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using uts_helps_system.api.ResourceManagement.Models;
 
 namespace uts_helps_system.api.Models
 {
@@ -26,5 +27,6 @@ namespace uts_helps_system.api.Models
         public string UserPass { get; set; }
         public string UserName { get; set; }
         public List<UserTokenEntry> UserTokens { get; set; }
+        public UserAccountStatus UserAccountStatus { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace uts_helps_system.api.Data
             
             context.Database.EnsureCreated();
 
-            // Look for any students.
+            // Look for any users.
             if (context.UserValues.Any())
             {
                 return;   // DB has been seeded
@@ -21,14 +21,14 @@ namespace uts_helps_system.api.Data
             var users = new User[] {
                 new User{
                     UserAccountType = UserAccountType.Student,
-                    UserBestContactNumber = "0415874123",
+                    UserBestContactNumber = "09047152678",
                     UserDob = new DateTime(1999, 5, 26),
                     UserEmail = "kirino.kousaka@gmail.com",
                     UserFaculty = "Software Engineering",
                     UserGenderType = UserGenderType.Female,
                     UserHasLoggedIn = false,
-                    UserHomePhone = "+81(012)-718-9874",
-                    UserMobile = "090-4715-2678",
+                    UserHomePhone = "+810127189874",
+                    UserMobile = "09047152678",
                     UserPass = "518d40970ee6490b0ebe41c0bcee3569",
                     UserPrefFirstName = "Kirino",
                     UserLastName = "Kousaka",

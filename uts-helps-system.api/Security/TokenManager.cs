@@ -6,6 +6,7 @@ using System;
 using uts_helps_system.api.Models;
 using System.Collections;
 using System.Collections.Generic;
+using uts_helps_system.api.ResourceManagement;
 
 namespace uts_helps_system.api.Security
 {
@@ -18,7 +19,7 @@ namespace uts_helps_system.api.Security
         public string AssignToken(int userId){
             if(UserExists(userId)) {
                 var userTokenCount = GetTokenEntries(userId).Count;
-                if(userTokenCount >= 3) {
+                if(userTokenCount >= CentralResourceManagement.UserTokenLimitPerUser) {
                     return null; // Only processing 3 tokens per user! No more tokens issued if the user is signed in 3 different times!
                 } else {
                     var tokenId = Guid.NewGuid();
@@ -95,6 +96,11 @@ namespace uts_helps_system.api.Security
 
         public User GetUserModelFromToken(string tokenId) {
             return GetUserFromToken(tokenId);
+        }
+
+        public bool TokenExists(string tokenId) {
+            var token = _context.UserTokenEntryValues.Where(x => x.TokenId == new Guid(tokenId)).FirstOrDefault<UserTokenEntry>();
+            return token != null;
         }
 
         private User GetUserFromToken(string tokenId) {
