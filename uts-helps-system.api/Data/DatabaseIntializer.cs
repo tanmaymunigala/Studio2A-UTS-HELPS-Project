@@ -35,7 +35,7 @@ namespace uts_helps_system.api.Data
                     UserLastName = "Kousaka",
                     UserName = "Kirino Kousaka",
                     StudentCountry = "Japan",
-                    StudentCourseType = StudentCourseType.CO9067,
+                    StudentCourseType = "CO9067",
                     StudentDegreeType = StudentDegreeType.Undergraduate,
                     StudentDegreeYearType = StudentDegreeYearType.ThirdYear,
                     StudentLanguage = "Japanese",

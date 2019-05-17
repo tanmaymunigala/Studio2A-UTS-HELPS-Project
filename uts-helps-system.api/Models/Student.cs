@@ -8,10 +8,7 @@ using uts_helps_system.api.Enums;
 namespace uts_helps_system.api.Models
 {
     public class Student : User {
-
-        //[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        // public int StudentId { get; set; }
-        public StudentCourseType StudentCourseType { get; set; }
+        public string StudentCourseType { get; set; }
         public StudentDegreeType StudentDegreeType { get; set; }
         public StudentDegreeYearType StudentDegreeYearType { get; set; }
         public StudentStatusType StudentStatusType { get; set; }

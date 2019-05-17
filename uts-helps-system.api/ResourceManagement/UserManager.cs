@@ -30,11 +30,11 @@ namespace uts_helps_system.api.ResourceManagement
             return true;
         }
 
-        public User GetUserModelByType(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass, int? studentCourseType = null, int? studentDegreeType = null, int? studentDegreeYearType = null, int? studentStatusType = null, string studentLanguage = null, string studentCountry = null, bool? studentPermissionToUseData = null, string studentOtherEducationalBackground = null) {
+        public User GetUserModelByType(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass, string studentCourseType = null, int? studentDegreeType = null, int? studentDegreeYearType = null, int? studentStatusType = null, string studentLanguage = null, string studentCountry = null, bool? studentPermissionToUseData = null, string studentOtherEducationalBackground = null) {
             try {
                 var userTypeEnum = (UserAccountType)userAccountType;
                 switch(userTypeEnum) {
-                    case UserAccountType.Student: return GetStudentAccount(userEmail, userPrefFirstName, userLastName, userFaculty, userHomePhone, userMobile, userBestContactNumber, userDob, userGenderType, userAccountType, userPass, (int)studentCourseType, (int)studentDegreeType, (int)studentDegreeYearType, (int)studentStatusType, studentLanguage, studentCountry, (bool)studentPermissionToUseData, studentOtherEducationalBackground);
+                    case UserAccountType.Student: return GetStudentAccount(userEmail, userPrefFirstName, userLastName, userFaculty, userHomePhone, userMobile, userBestContactNumber, userDob, userGenderType, userAccountType, userPass, studentCourseType, (int)studentDegreeType, (int)studentDegreeYearType, (int)studentStatusType, studentLanguage, studentCountry, (bool)studentPermissionToUseData, studentOtherEducationalBackground);
                     case UserAccountType.Admin: return GetAdminAccount(userEmail, userPrefFirstName, userLastName, userFaculty, userHomePhone, userMobile, userBestContactNumber, userDob, userGenderType, userAccountType, userPass);
                     default: return null;
                 }
@@ -43,7 +43,7 @@ namespace uts_helps_system.api.ResourceManagement
             }
         }
 
-        private Student GetStudentAccount(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass, int studentCourseType, int studentDegreeType, int studentDegreeYearType, int studentStatusType, string studentLanguage, string studentCountry, bool studentPermissionToUseData, string studentOtherEducationalBackground) {
+        private Student GetStudentAccount(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass, string studentCourseType, int studentDegreeType, int studentDegreeYearType, int studentStatusType, string studentLanguage, string studentCountry, bool studentPermissionToUseData, string studentOtherEducationalBackground) {
             Student studentModel = new Student() {
                 UserEmail = userEmail,
                 UserPrefFirstName = userPrefFirstName,
@@ -58,7 +58,7 @@ namespace uts_helps_system.api.ResourceManagement
                 UserHasLoggedIn = false,
                 UserPass = HashingAlgorithms.ComputeMd5Hash(userPass),
                 UserName = $"{userPrefFirstName} {userLastName}",
-                StudentCourseType = (StudentCourseType)studentCourseType,
+                StudentCourseType = studentCourseType,
                 StudentDegreeType = (StudentDegreeType)studentDegreeType,
                 StudentDegreeYearType = (StudentDegreeYearType)studentDegreeYearType,
                 StudentStatusType = (StudentStatusType)studentStatusType,
