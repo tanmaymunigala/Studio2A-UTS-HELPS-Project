@@ -1,5 +1,6 @@
 using uts_helps_system.api.Data;
 using uts_helps_system.api.Security.Models;
+using uts_helps_system.api.Enums;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System;

@@ -1,6 +1,8 @@
 using System;
 using uts_helps_system.api.Models;
+using uts_helps_system.api.Enums;
 using uts_helps_system.api.Data;
+using uts_helps_system.api.Security;
 using uts_helps_system.api.ResourceManagement.Models;
 using System.Linq;
 using System.IO;
@@ -22,12 +24,82 @@ namespace uts_helps_system.api.ResourceManagement
             string address = $@"{CentralResourceManagement.ConfirmRegistrationUrl}{GenerateConfirmationToken(user.UserId)}";
             var userConfirmationStatus = _context.UserAccountStatusValues.Where(x => x.UserId == user.UserId).FirstOrDefault<UserAccountStatus>();
             if (!_emailTemplateManager.SendConfirmRegistrationEmail(userAddress, "Welcome, Please Confirm Your Email!", "Click here to confirm your email", address, $"Email Confirmation for {user.UserName}")) {
-                _context.UserAccountStatusValues.Remove(userConfirmationStatus);
-                _context.UserValues.Remove(user);
-                _context.SaveChanges();
+                RollbackUserRegistration(user);
                 return false;
             }
             return true;
+        }
+
+        public User GetUserModelByType(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass, int? studentCourseType = null, int? studentDegreeType = null, int? studentDegreeYearType = null, int? studentStatusType = null, string studentLanguage = null, string studentCountry = null, bool? studentPermissionToUseData = null, string studentOtherEducationalBackground = null) {
+            try {
+                var userTypeEnum = (UserAccountType)userAccountType;
+                switch(userTypeEnum) {
+                    case UserAccountType.Student: return GetStudentAccount(userEmail, userPrefFirstName, userLastName, userFaculty, userHomePhone, userMobile, userBestContactNumber, userDob, userGenderType, userAccountType, userPass, (int)studentCourseType, (int)studentDegreeType, (int)studentDegreeYearType, (int)studentStatusType, studentLanguage, studentCountry, (bool)studentPermissionToUseData, studentOtherEducationalBackground);
+                    case UserAccountType.Admin: return GetAdminAccount(userEmail, userPrefFirstName, userLastName, userFaculty, userHomePhone, userMobile, userBestContactNumber, userDob, userGenderType, userAccountType, userPass);
+                    default: return null;
+                }
+            } catch(Exception) {
+                return null;
+            }
+        }
+
+        private Student GetStudentAccount(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass, int studentCourseType, int studentDegreeType, int studentDegreeYearType, int studentStatusType, string studentLanguage, string studentCountry, bool studentPermissionToUseData, string studentOtherEducationalBackground) {
+            Student studentModel = new Student() {
+                UserEmail = userEmail,
+                UserPrefFirstName = userPrefFirstName,
+                UserLastName = userLastName,
+                UserFaculty = userFaculty,
+                UserHomePhone = userHomePhone,
+                UserMobile = userMobile,
+                UserBestContactNumber = userBestContactNumber,
+                UserDob = Convert.ToDateTime(userDob),
+                UserGenderType = (UserGenderType)userGenderType,
+                UserAccountType = (UserAccountType)userAccountType,
+                UserHasLoggedIn = false,
+                UserPass = HashingAlgorithms.ComputeMd5Hash(userPass),
+                UserName = $"{userPrefFirstName} {userLastName}",
+                StudentCourseType = (StudentCourseType)studentCourseType,
+                StudentDegreeType = (StudentDegreeType)studentDegreeType,
+                StudentDegreeYearType = (StudentDegreeYearType)studentDegreeYearType,
+                StudentStatusType = (StudentStatusType)studentStatusType,
+                StudentLanguage = studentLanguage,
+                StudentCountry = studentCountry,
+                StudentPermissionToUseData = studentPermissionToUseData,
+                StudentOtherEducationalBackground = studentOtherEducationalBackground
+            };
+            return studentModel;
+        }
+
+        private Admin GetAdminAccount(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass) {
+            Admin adminModel = new Admin() {
+                UserEmail = userEmail,
+                UserPrefFirstName = userPrefFirstName,
+                UserLastName = userLastName,
+                UserFaculty = userFaculty,
+                UserHomePhone = userHomePhone,
+                UserMobile = userMobile,
+                UserBestContactNumber = userBestContactNumber,
+                UserDob = Convert.ToDateTime(userDob),
+                UserGenderType = (UserGenderType)userGenderType,
+                UserAccountType = (UserAccountType)userAccountType,
+                UserHasLoggedIn = false,
+                UserPass = HashingAlgorithms.ComputeMd5Hash(userPass),
+                UserName = $"{userPrefFirstName} {userLastName}"
+            };
+            return adminModel;
+        }
+
+        public bool RollbackUserRegistration(User userModel) {
+            if(userModel != null) {
+                var userAccountStatus = _context.UserAccountStatusValues.Where(x => x.UserId == userModel.UserId).FirstOrDefault<UserAccountStatus>();
+                if(userAccountStatus != null) {
+                    _context.UserAccountStatusValues.Remove(userAccountStatus);
+                }
+                _context.UserValues.Remove(userModel);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public User GetUserByConfirmationToken(string userConfirmationToken) {
@@ -63,6 +135,9 @@ namespace uts_helps_system.api.ResourceManagement
             return false;
         }
 
+        public User GetUserFromEmailAddress(string emailAddress) {
+            return GetUserByEmail(emailAddress);
+        }
         
     }
 }
