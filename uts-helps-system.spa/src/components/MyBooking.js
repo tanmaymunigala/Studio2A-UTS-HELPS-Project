@@ -4,7 +4,7 @@ export class MyBooking extends Component {
   render() {
     return (
       <div>
-          Hello
+          <label> This is My Bookings</label>
       </div>
     )
   }

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-//import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default class Dashboard extends Component {
     render(){
@@ -8,10 +8,10 @@ export default class Dashboard extends Component {
                 <div>
                    <label>UTS HELPS</label>
                    <div>
-                   <button>My Bookings</button>
-                   <button>Workshops</button>
-                   <button>Resources</button>
-                   <button>FAQ</button>
+                   <Link to ="/MyBooking"><button>My Bookings</button></Link>
+                   <Link to ="/Workshops"><button>Workshops</button></Link>
+                   <Link to ="/Resources"><button>Resources</button></Link>
+                   <Link to ="/FAQ"><button>FAQ</button></Link>
                    <textarea>Search</textarea>
                    
                 </div>
