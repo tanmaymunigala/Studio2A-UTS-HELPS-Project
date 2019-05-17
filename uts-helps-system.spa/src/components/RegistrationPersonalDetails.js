@@ -5,11 +5,14 @@ export default class RegistrationPersonalDetails extends Component {
     render(){
         return(
             <div>
-                <div>  <label>Test the registering student page</label></div>
-                <Link to="/helloWorld"><button>Test</button></Link>
-                <div>
-                <Link to="/helloWorld"><button>Test</button></Link>
+                <div>  <label>UTS : HELPS</label></div>
+                <div>  <label>Student Registration</label>
+                <label>______________Personal Details</label>
                 </div>
+                <div> 
+                
+                </div>
+                <Link to="/helloWorld"><button>Next</button></Link>
             </div>
         )
     }
