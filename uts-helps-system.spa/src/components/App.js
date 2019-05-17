@@ -5,6 +5,7 @@ import Login from "./Login";
 import RegistrationPersonalDetails from "./RegistrationPersonalDetails";
 import Dashboard from "./Dashborad";
 import Admin from "./Admin";
+import MyBooking from './MyBooking'
 import {Header, Footer} from '../common'
 
 
@@ -17,6 +18,7 @@ export default class App extends Component {
                 <Route exact path = "/" component = {Login}/>
                 <Route exact path = "/RegistrationPersonalDetails" component = {RegistrationPersonalDetails}/>
                 <Route exact path = "/Dashboard" component = {Dashboard}/>
+                <Route exact path = "/MyBooking" component = {MyBooking}/>
                 <Route exact path = "/Admin" component = {Admin}/>
                 </BrowserRouter>
                 <Footer/>
