@@ -64,6 +64,8 @@ namespace uts_helps_system.api.Data
                 context.UserValues.Add(user);
             }
 
+            context.SaveChanges();
+
             var registeredEmails = new RegisteredAdminEmail[] {
                 new RegisteredAdminEmail {
                     RegisteredAdminEmailAddress = "sora.kasugano@gmail.com",
@@ -79,7 +81,28 @@ namespace uts_helps_system.api.Data
                 context.RegisteredAdminEmailValues.Add(registeredEmail);
             }
 
+            var userAccountStatuses = new UserAccountStatus[] {
+                new UserAccountStatus {
+                    UserAccountConfirmed = true,
+                    UserConfirmationToken = Guid.NewGuid(),
+                    UserId = GetUserIdFromEmail("kirino.kousaka@gmail.com", users)
+                },
+                new UserAccountStatus {
+                    UserAccountConfirmed = true,
+                    UserConfirmationToken = Guid.NewGuid(),
+                    UserId = GetUserIdFromEmail("sora.kasugano@gmail.com", users)
+                }
+            };
+
+            foreach(var accountStatus in userAccountStatuses) {
+                context.UserAccountStatusValues.Add(accountStatus);
+            }
+
             context.SaveChanges();
+        }
+
+        public static int GetUserIdFromEmail(string userEmail, User[] userArray) {
+            return userArray.Where(x => x.UserEmail.Equals(userEmail)).FirstOrDefault<User>().UserId;
         }
     }
 }

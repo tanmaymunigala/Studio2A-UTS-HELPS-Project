@@ -8,6 +8,7 @@ using uts_helps_system.api.Models;
 using System.Collections;
 using System.Collections.Generic;
 using uts_helps_system.api.ResourceManagement;
+using uts_helps_system.api.ResourceManagement.Models;
 
 namespace uts_helps_system.api.Security
 {
@@ -24,7 +25,7 @@ namespace uts_helps_system.api.Security
                     return null; // Only processing 3 tokens per user! No more tokens issued if the user is signed in 3 different times!
                 } else {
                     var tokenId = Guid.NewGuid();
-                    _context.UserTokenEntryValues.Add(new Models.UserTokenEntry {
+                    _context.UserTokenEntryValues.Add(new UserTokenEntry {
                         TokenId = tokenId,
                         UserId = userId
                     });

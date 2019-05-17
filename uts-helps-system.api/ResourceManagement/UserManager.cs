@@ -135,6 +135,13 @@ namespace uts_helps_system.api.ResourceManagement
             return false;
         }
 
+        public UserAccountStatus GetUserConfirmationStatus(User userModel) {
+            if(userModel != null) {
+                return _context.UserAccountStatusValues.Where(x => x.UserId == userModel.UserId).FirstOrDefault<UserAccountStatus>();
+            }
+            return null;
+        }
+
         public User GetUserFromEmailAddress(string emailAddress) {
             return GetUserByEmail(emailAddress);
         }

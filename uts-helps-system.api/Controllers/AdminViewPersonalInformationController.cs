@@ -10,24 +10,24 @@ using uts_helps_system.api.Enums;
 
 namespace uts_helps_system.api.Controllers
 {
-    [Route("api/StudentViewPersonalInformationController/")]
+    [Route("api/AdminViewPersonalInformationController/")]
     [ApiController]
-    public class StudentViewPersonalInformationController : ControllerBase
+    public class AdminViewPersonalInformationController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
         private readonly TokenManager _tokenManager;
 
-        public StudentViewPersonalInformationController(ApplicationDbContext context) {
+        public AdminViewPersonalInformationController(ApplicationDbContext context) {
             _context = context;
             _tokenManager = new TokenManager(_context);
         }
 
-        [Route("GetStudentInfo/{tokenId}")]
-        public Student GetStudentInfo(string tokenId) {
+        [Route("GetAdminInfo/{tokenId}")]
+        public Admin GetAdminInfo(string tokenId) {
             var userModel = _tokenManager.GetUserModelFromToken(tokenId);
             if(userModel != null) {
-                if(userModel.UserAccountType == UserAccountType.Student) {
-                    return (Student)userModel;
+                if(userModel.UserAccountType == UserAccountType.Admin) {
+                    return (Admin)userModel;
                 }
             }
             return null;
