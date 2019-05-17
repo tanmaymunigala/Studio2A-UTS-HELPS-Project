@@ -5,6 +5,7 @@ import Login from "./Login";
 import RegistrationPersonalDetails from "./RegistrationPersonalDetails";
 import Dashboard from "./Dashborad";
 import Admin from "./Admin";
+import RegistrationEducation from "./RegistrationEducation"
 
 
 export default class App extends Component {
@@ -16,6 +17,7 @@ export default class App extends Component {
                 <Route exact path = "/RegistrationPersonalDetails" component = {RegistrationPersonalDetails}/>
                 <Route exact path = "/Dashboard" component = {Dashboard}/>
                 <Route exact path = "/Admin" component = {Admin}/>
+                <Route exact path = "/RegistrationEducation" component = {RegistrationEducation}/>
                 </BrowserRouter>
             </div>
             
