@@ -3,7 +3,7 @@ import {BrowserRouter,Route} from "react-router-dom";
 
 import Login from "./Login";
 import RegistrationPersonalDetails from "./RegistrationPersonalDetails";
-import Dashboard from "./Dashborad";
+import Dashboard from "./Dashboard";
 import Admin from "./Admin";
 import MyBooking from './MyBooking'
 import Workshop from './Workshop'
