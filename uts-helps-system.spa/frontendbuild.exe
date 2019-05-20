@@ -1,0 +1,14 @@
+echo "#########################################################################"
+echo "###### Download those pesky NPM packages..."
+echo ""
+echo "npm install --no-optional"
+npm install --no-optional
+
+echo "#########################################################################"
+echo "###### Starting up your frontend website!..."
+echo ""
+echo "npm start"
+npm start
+
+echo "#########################################################################"
+echo "###### Have a quick look for errors above and if nothing went wrong, you're good to go!"
