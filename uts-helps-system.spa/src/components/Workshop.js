@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import WorkshopAvailable from './WorkshopAvailable'
 import WorkshopUpcoming from './WorkshopUpcoming'
 import TextField from '@material-ui/core/TextField';
+import {Link} from "react-router-dom";
 
 export class Workshop extends Component {
   render() {
@@ -29,6 +30,9 @@ export class Workshop extends Component {
             }}/>
         </div>
         <WorkshopUpcoming/>
+        <div>
+          <Link to="/Dashboard"><button>Return to Dashboard</button></Link>
+        </div>
     </div>
     )
   }

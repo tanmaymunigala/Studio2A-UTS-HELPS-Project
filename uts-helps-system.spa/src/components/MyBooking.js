@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MyBookingList from './MyBookingList'
 import TextField from '@material-ui/core/TextField';
+import {Link} from "react-router-dom";
 
 
 export class MyBooking extends Component {
@@ -20,6 +21,9 @@ export class MyBooking extends Component {
               }}/>
           </div>
           <MyBookingList/>
+          <div>
+          <Link to="/Dashboard"><button>Return to Dashboard</button></Link>
+        </div>
       </div>
     )
   }
