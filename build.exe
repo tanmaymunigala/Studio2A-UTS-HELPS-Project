@@ -1,0 +1,33 @@
+# run this script on a directory containing the UTS-HELPS-System source and it will build everything required.
+
+echo ""
+echo "#########################################################################"
+echo "###### Alright, lets get to building..."
+echo ""
+echo "dotnet restore"
+echo "dotnet build"
+
+cd uts-helps-system.api
+dotnet restore
+dotnet build
+
+echo ""
+echo "#########################################################################"
+echo "###### That local database can sometimes get dirty, I'll give it a spring clean too..."
+echo "dotnet ef database update --context ApplicationDbContext"
+
+dotnet ef database update
+
+cd ..
+
+echo "#########################################################################"
+echo "###### Download those pesky NPM packages..."
+echo ""
+echo "npm install --no-optional"
+cd uts-helps-system.spa
+npm install --no-optional
+
+cd ..
+
+echo "#########################################################################"
+echo "###### Have a quick look for errors above and if nothing went wrong, you're good to go!"
