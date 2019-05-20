@@ -13,7 +13,7 @@ export default class Login extends Component {
                     <textarea></textarea>
                 </div>
                 <div>
-                    <label>Password</label>
+                    <label>Password: </label>
                     <textarea></textarea>
                 </div>
                 <Link to="/Dashboard"><button>Login</button></Link>

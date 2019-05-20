@@ -12,7 +12,9 @@ export default class Dashboard extends Component {
                    <Link to="/Workshop"><button>Workshops</button></Link>
                    <button>Resources</button>
                    <button>FAQ</button>
-                   <textarea>Search</textarea>
+                   </div>
+                   <div>
+                   <Link to="/"><button>Return to Homepage</button></Link>
                    </div>
                 </div>
             </div>
