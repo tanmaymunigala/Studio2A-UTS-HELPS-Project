@@ -41,10 +41,8 @@ function createData(name, startDate, endDate, time, room, sessions) {
 }
 
 const rows = [
-  createData('How to improve your English', '21/05/2019', '21/05/2019', '13:00 - 16:00', 'CB01.05.02', 4),
-  createData('Learning grammar 101', '22/05/2019', '22/05/2019', '13:00 - 16:00', 'CB01.05.04', 3),
-  createData('Speaking skill improvement', '23/05/2019', '23/05/2019', '13:00 - 16:00', 'CB01.07.02', 6),
-  createData('How to Prepare for your Exams', '21/05/2019', '21/05/2019', '13:00 - 16:00', 'CB01.01.02', 3),
+  createData('How to improve your English', '21/05/2019', '21/05/2019', '13:00 - 16:00', 'CB01.05.02', 5),
+  createData('Learning grammar 101', '22/05/2019', '22/05/2019', '13:00 - 16:00', 'CB01.05.04', 5),
   createData('Write Now@HELPS! Writing Support Session', '25/05/2019', '25/05/2019', '13:00 - 16:00', 'CB01.06.02', 3),
 ];
 
