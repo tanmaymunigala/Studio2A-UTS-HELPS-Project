@@ -9,7 +9,7 @@ export default class Login extends Component {
                     <label>UTS: HELPS</label>
                 </div>
                 <div>
-                    <label>Student Number: </label>
+                    <label>Username: </label>
                     <textarea></textarea>
                 </div>
                 <div>
@@ -18,10 +18,7 @@ export default class Login extends Component {
                 </div>
                 <Link to="/Dashboard"><button>Login</button></Link>
                 <div>
-                <Link to="/Admin"><button>Not a Student</button></Link>
-                </div>
-                <div>
-                <Link to="/RegistrationPersonalDetails"><button>Register(Students)</button></Link>
+                <Link to="/RegistrationPersonalDetails"><button>Register</button></Link>
                 </div>
             </div>
         )
