@@ -1,7 +1,7 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import { Typography } from "@material-ui/core";
-import utsLogo from "../assets/pictures/utsFooter.PNG"
+import utsLogo from "../../assets/pictures/utsFooter.PNG"
 var style = {
     backgroundColor: "#F8F8F8",
     borderTop: "1px solid #E7E7E7",
@@ -21,7 +21,7 @@ var phantom = {
   width: '100%',
 }
 
-function Footer({ children }) {
+  function Footer({ children }) {
     return (
 
 

@@ -1,34 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import PropTypes from "prop-types";
-import AppBar from "@material-ui/core/AppBar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import PhoneIcon from "@material-ui/icons/Phone";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import PersonPinIcon from "@material-ui/icons/PersonPin";
-import HelpIcon from "@material-ui/icons/Help";
-import ShoppingBasket from "@material-ui/icons/ShoppingBasket";
-import ThumbDown from "@material-ui/icons/ThumbDown";
-import ThumbUp from "@material-ui/icons/ThumbUp";
-import Typography from "@material-ui/core/Typography";
-import { Card, CardHeader } from "@material-ui/core";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import Collapse from "@material-ui/core/Collapse";
-import IconButton from '@material-ui/core/IconButton';
+import {Grid,AppBar,Tabs,Tab} from "@material-ui/core"
+ 
+import {Avatar,Collapse,IconButton,Typography,withStyles} from "@material-ui/core";
+
+//Imports for the card component, just copy the whole line when using cards 
+import {Card, CardHeader,CardContent,CardMedia,CardActions} from "@material-ui/core";
+//Imports for Icons, copy the whole line when using Icons
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import red from '@material-ui/core/colors/red';
-import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Avatar from '@material-ui/core/Avatar';
-import x from "../assets/pictures/skillsCard.jpg"
+// import FavoriteIcon from "@material-ui/icons"
+import HelpIcon from "@material-ui/icons"
+import PersonPinIcon from "@material-ui/icons/PersonPin"
+// import {ThumbDown, ShoppingBasket, PersonPinIcon, PhoneIcon,ThumbUp,ShareIcon,MoreVertIcon} from "@material-ui/icons"
+ 
+import x from "../..//assets/pictures/skillsCard.jpg"
 import classnames from 'classnames';
-  import { withStyles } from '@material-ui/core/styles';
-
-
+import Style from "./Style"
 
 function TabContainer(props) {
   return (
@@ -37,31 +24,6 @@ function TabContainer(props) {
     </Typography>
   );
 }
-const styles = theme => ({
-    card: {
-      maxWidth: 400,
-    },
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
-    },
-    actions: {
-      display: 'flex',
-    },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
-    avatar: {
-      backgroundColor: red[500],
-    },
-  });
 
 class Dashboard extends Component {
   state = {
@@ -94,29 +56,18 @@ class Dashboard extends Component {
               component={Link}
               to="/MyBooking"
               label=" MyBooking "
-              icon={<PhoneIcon />}
+              icon={<PersonPinIcon />}
             />
             <Tab
               component={Link}
               to="/Workshop"
               label="Workshop"
-              icon={<FavoriteIcon />}
-            />
-            <Tab
-              component={Link}
-              to="/Resources"
-              label="Resources"
               icon={<PersonPinIcon />}
             />
-            <Tab
-              component={Link}
-              to="/FeatureX"
-              label="FeatureX"
-              icon={<HelpIcon />}
-            />
-            <Tab label="Item Five" icon={<ShoppingBasket />} />
-            <Tab label="Item Six" icon={<ThumbDown />} />
-            <Tab label="Item Seven" icon={<ThumbUp />} />
+             
+            <Tab label="Item Five" icon={<PersonPinIcon />} />
+            <Tab label="Item Six" icon={<PersonPinIcon />} />
+            <Tab label="Item Seven" icon={<PersonPinIcon />} />
           </Tabs>
         </AppBar>
         {value === 1 && <TabContainer>Item Two</TabContainer>}
@@ -136,7 +87,7 @@ class Dashboard extends Component {
               }
               action={
                 <IconButton>
-                  <MoreVertIcon />
+                  <PersonPinIcon />
                 </IconButton>
               }
               title="Shrimp and Chorizo Paella"
@@ -156,10 +107,10 @@ class Dashboard extends Component {
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
               <IconButton aria-label="Add to favorites">
-                <FavoriteIcon />
+                <PersonPinIcon />
               </IconButton>
               <IconButton aria-label="Share">
-                <ShareIcon />
+                <PersonPinIcon />
               </IconButton>
               <IconButton
                 className={classnames(classes.expand, {
@@ -212,4 +163,4 @@ class Dashboard extends Component {
   }
 }
 
-export default withStyles(styles)(Dashboard);
+export default withStyles(Style)(Dashboard);
