@@ -17,10 +17,7 @@ import {
   DialogContentText,
   DialogActions
 } from "@material-ui/core";
-
-// Gender Button
-import GenderSelect from "./GenderSelect";
-
+ 
 class Business extends Component {
   state = {
     dialog: false,
@@ -189,7 +186,7 @@ class Business extends Component {
                     </Grid>
                     {/* GenderSelect */}
                     <Grid item xs={12}>
-                      <GenderSelect />
+                      {/* <GenderSelect /> */}
                     </Grid>
                     <Grid item xs={12}>
                       <TextField
