@@ -6,6 +6,12 @@ const Style = theme => ({
           width: '100%',
            color:"red",
         },
+        
+        hover: {textDecoration: 'none' , color:'white',fontWeight:'normal', fontSize:45,
+          "&:hover": {
+            fontWeight:'bold', 
+           }
+        },
         grow: {
           flexGrow: 1,
         },
@@ -20,8 +26,10 @@ const Style = theme => ({
           },
         },
         search: {
-          position: 'relative',
-           marginTop:20,
+          position: 'sticky',
+          marginTop:20,
+           marginLeft:90,
+           marginRight:90,
            marginBottom:20,
           borderRadius: theme.shape.borderRadius,
           backgroundColor: fade(theme.palette.common.white, 0.15),
