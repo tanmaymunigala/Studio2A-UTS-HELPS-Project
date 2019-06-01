@@ -21,6 +21,7 @@ var phantom = {
   width: "100%"
 };
 
+
 function Footer({ children }) {
   return (
     <Grid
@@ -47,6 +48,9 @@ function Footer({ children }) {
               {" "}
               About Us
             </a>
+            {" "}
+            About Us{" "}
+
           </Typography>
         </Grid>
         <Grid item>
@@ -58,6 +62,7 @@ function Footer({ children }) {
               {" "}
               FAQ
             </a>
+
           </Typography>
         </Grid>
         <Grid item>
@@ -69,6 +74,7 @@ function Footer({ children }) {
               {" "}
               Contact Us
             </a>
+            Contact Us
           </Typography>
         </Grid>
       </Grid>
@@ -93,4 +99,4 @@ function Footer({ children }) {
   );
 }
 
-export default Footer;
+export default withStyles(Style)(Footer);
