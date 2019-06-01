@@ -1,26 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { Typography } from "@material-ui/core";
+import { Typography,withStyles } from "@material-ui/core";
 import utsLogo from "../../assets/pictures/utsFooter.PNG";
-var style = {
-  backgroundColor: "#F8F8F8",
-  borderTop: "1px solid #E7E7E7",
-  textAlign: "center",
-  padding: "20px",
-  position: "fixed",
-  left: "0",
-  bottom: "0",
-  height: "60px",
-  width: "100%"
-};
-
-var phantom = {
-  display: "block",
-  padding: "20px",
-  height: "60px",
-  width: "100%"
-};
-
+ import Style from "./Style"
 
 function Footer({ children }) {
   return (
@@ -49,8 +31,7 @@ function Footer({ children }) {
               About Us
             </a>
             {" "}
-            About Us{" "}
-
+ 
           </Typography>
         </Grid>
         <Grid item>
@@ -74,8 +55,7 @@ function Footer({ children }) {
               {" "}
               Contact Us
             </a>
-            Contact Us
-          </Typography>
+           </Typography>
         </Grid>
       </Grid>
 
