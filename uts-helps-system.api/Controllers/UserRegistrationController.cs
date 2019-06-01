@@ -26,7 +26,7 @@ namespace uts_helps_system.api.Controllers
             _adminRegistrationManager = new AdminRegistrationManager(_context, _userManager);
         }
 
-        [Route("RegisterUser/{UserEmail}/{UserPrefFirstName}/{UserLastName}/{UserFaculty}/{UserHomePhone}/{UserMobile}/{UserBestContactNumber}/{UserDob}/{UserGenderType}/{UserAccountType}/{UserPass}")]
+        [Route("RegisterUser/{userEmail}/{userPrefFirstName}/{userLastName}/{userFaculty}/{userHomePhone}/{userMobile}/{userBestContactNumber}/{userDob}/{userGenderType}/{userAccountType}/{userPass}/{studentCourseType?}/{studentDegreeType?}/{studentDegreeYearType?}/{studentStatusType?}/{studentLanguage?}/{studentCountry?}/{studentPermissionToUseData?}/{studentOtherEducationalBackground?}")]
         public bool RegisterUser(string userEmail, string userPrefFirstName, string userLastName, string userFaculty, string userHomePhone, string userMobile, string userBestContactNumber, string userDob, int userGenderType, int userAccountType, string userPass, string studentCourseType = null, int? studentDegreeType = null, int? studentDegreeYearType = null, int? studentStatusType = null, string studentLanguage = null, string studentCountry = null, bool? studentPermissionToUseData = null, string studentOtherEducationalBackground = null) {
             var existingUsers = _context.UserValues.Where(x => x.UserEmail == userEmail).FirstOrDefault<User>();
             if(existingUsers == null) {
