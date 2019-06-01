@@ -149,7 +149,42 @@ export default class Login extends Component {
                 Log In
               </Button>
             </Grid>
+            <Grid item>
+            <Typography
+                style={{
+                  width: "100%",
+                  padding: 15,
+                  marginTop: 10,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  minWidth: 265,
+                  textDecoration:'none'
+                }}
+              >
+                Don't have an account?
+                <Link to="/RegistrationPersonalDetails"> Sign Up! </Link>
+               </Typography>
+            </Grid>
+            <Grid item>
+            <Typography
+                component={Link}
+                to="/Dashboard"
+                variant="contained"
+                color="primary"
+                style={{
+                  width: "100%",
+                  padding: 15,
+                  marginTop: 10,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  minWidth: 265
+                }}
+              >
+                Forgot password
+              </Typography>
+            </Grid>
           </Grid>
+          
 
           {/* <Link to="/Dashboard"><button>Login</button></Link>
                 <div>

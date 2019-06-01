@@ -17,10 +17,10 @@ class App extends Component {
 
           <Switch>
              <Route exact path="/" component={Routes.Login} />
-            {/* <Route
+            <Route
               path="/RegistrationPersonalDetails"
               component={Routes.RegistrationPersonalDetails}
-            /> */}
+            />
             <Route path="/Dashboard" component={Routes.Dashboard} />
             <Route path="/MyBooking" component={Routes.MyBooking} />
             <Route path="/Workshop" component={Routes.Workshop} />
