@@ -10,7 +10,7 @@ const Style = theme => ({
     height: "60px",
     width: "100%"
   },
-
+  
   phantom: {
     display: "block",
     padding: "20px",
