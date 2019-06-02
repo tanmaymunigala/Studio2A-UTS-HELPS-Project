@@ -1,21 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Grid,AppBar,Tabs,Tab} from "@material-ui/core"
- 
-import {Avatar,Collapse,IconButton,Typography,withStyles} from "@material-ui/core";
+import { Grid, AppBar, Tabs, Tab } from "@material-ui/core";
 
-//Imports for the card component, just copy the whole line when using cards 
-import {Card, CardHeader,CardContent,CardMedia,CardActions} from "@material-ui/core";
+import {
+  Avatar,
+  Collapse,
+  IconButton,
+  Typography,
+  withStyles
+} from "@material-ui/core";
+
+//Imports for the card component, just copy the whole line when using cards
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardMedia,
+  CardActions
+} from "@material-ui/core";
 //Imports for Icons, copy the whole line when using Icons
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import FavoriteIcon from "@material-ui/icons"
-import HelpIcon from "@material-ui/icons"
-import PersonPinIcon from "@material-ui/icons/PersonPin"
+import HelpIcon from "@material-ui/icons";
+import PersonPinIcon from "@material-ui/icons/PersonPin";
 // import {ThumbDown, ShoppingBasket, PersonPinIcon, PhoneIcon,ThumbUp,ShareIcon,MoreVertIcon} from "@material-ui/icons"
- 
-import x from "../..//assets/pictures/skillsCard.jpg"
-import classnames from 'classnames';
-import Style from "./Style"
+
+import x from "../..//assets/pictures/skillsCard.jpg";
+import classnames from "classnames";
+import Style from "./Style";
 
 function TabContainer(props) {
   return (
@@ -64,7 +76,7 @@ class Dashboard extends Component {
               label="Workshop"
               icon={<PersonPinIcon />}
             />
-             
+
             <Tab label="Item Five" icon={<PersonPinIcon />} />
             <Tab label="Item Six" icon={<PersonPinIcon />} />
             <Tab label="Item Seven" icon={<PersonPinIcon />} />
@@ -93,11 +105,7 @@ class Dashboard extends Component {
               title="Shrimp and Chorizo Paella"
               subheader="September 14, 2016"
             />
-            <CardMedia
-              className={classes.media}
-              src={x}
-               title="Paella dish"
-            />
+            <CardMedia className={classes.media} src={x} title="Paella dish" />
             <CardContent>
               <Typography component="p">
                 This impressive paella is a perfect party dish and a fun meal to
@@ -157,7 +165,7 @@ class Dashboard extends Component {
               </CardContent>
             </Collapse>
           </Card>
-         </Grid>
+        </Grid>
       </Grid>
     );
   }
