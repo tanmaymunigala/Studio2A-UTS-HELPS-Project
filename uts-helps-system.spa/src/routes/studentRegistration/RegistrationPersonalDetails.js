@@ -304,9 +304,4 @@ class Business extends Component {
     );
   }
 }
-
-Business.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
 export default withStyles(Style)(Business);
