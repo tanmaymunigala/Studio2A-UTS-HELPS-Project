@@ -12,6 +12,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   paper: {
+      marginTop:20,
     padding: 10,
     margin: 'auto',
     maxWidth: 5000,
@@ -25,11 +26,13 @@ const styles = theme => ({
 });
 
 
-
 function ComplexGrid(props) {
   const { classes } = props;
   return (
+
     <div className={classes.root}>
+
+        
         <Card raised="true" style={{ background: "#81d4fa",marginTop:20 , marginBottom:20, marginLeft: 10, marginRight: 10,marginBottom:30 }} >
         <CardHeader style={{fontFamily:"Times New Roman" }} />
         <Grid item style={{  marginLeft: 10, marginRight: 10, marginBottom:20  }}>
@@ -38,24 +41,24 @@ function ComplexGrid(props) {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2} >
               <Grid item xs>
-                <Typography gutterBottom variant="subtitle1">
-                  How to study 101
+                <Typography gutterBottom variant="h4">
+                    Learning grammar 101
                 </Typography>
-                <Typography variant="body2" gutterBottom>
-                  CB01.05.101
+                <Typography variant="h5" gutterBottom>
+                    Room: CB01.05.04
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  22/5/2019
+                <Typography variant="h5" color="textSecondary">
+                    Date: 22/05/2019
+                </Typography>
+                <Typography variant="h5" color="textSecondary">
+                    Time: 13:00 - 16:00
                 </Typography>
               </Grid>
               <Grid item>
                 <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                  Remove
+                  Cancel
                 </Typography>
               </Grid>
-            </Grid>
-            <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
             </Grid>
           </Grid>
         </Grid>
