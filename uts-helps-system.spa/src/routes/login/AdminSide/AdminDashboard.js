@@ -21,7 +21,7 @@ export default class AdminDashboard extends Component {
             <Navigation>
               <a href="#">  <Link to="/Sessions"> Sessions</Link></a>
                 <Link to="/Advisiors"><a href="#">Advisors</a></Link>
-                <a href="#">Waiting Lists</a>
+                <Link to="/WaitingLists"><a href="#">Waiting Lists</a></Link>
                 <a href="#">Update Messages</a>
                 <a href="#">Rooms</a>
                 <Link to= "/WorkshopAdmin"><a href="#">Workshops</a></Link>

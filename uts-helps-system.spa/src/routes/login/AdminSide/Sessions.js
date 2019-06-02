@@ -6,9 +6,8 @@ export default class Sessions extends Component {
     render(){
         return(
             <div>
-                                <AdminDashboard/>
 
-                <label>Admin Sessions Goes Here</label>
+                <label>STUDENT SESSIONS</label>
             </div>
         )
     }
