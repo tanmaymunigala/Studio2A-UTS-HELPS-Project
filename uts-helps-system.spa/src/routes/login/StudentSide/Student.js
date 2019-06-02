@@ -127,7 +127,7 @@ export default class Login extends Component {
                     color="primary"
                   />
                 }
-                label="keep me logged in"
+                label="Keep me logged in"
               />
             </Grid>
 
