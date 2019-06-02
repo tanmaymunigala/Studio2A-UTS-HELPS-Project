@@ -9,7 +9,9 @@ export { default as Main } from "./login/AdminSide/Main";
 export { default as Sessions } from "./login/AdminSide/Sessions";
 export { default as WorkshopAdmin } from "./login/AdminSide/WorkshopAdmin";
 export { default as AdminDashboard } from "./login/AdminSide/AdminDashboard";
+export { default as EmailTemplates } from "./login/AdminSide/EmailTemplates";
 export { default as Advisiors } from "./login/AdminSide/Advisiors";
+export { default as WaitingLists } from "./login/AdminSide/WaitingLists";
 
 export { default as RegistrationPersonalDetails } from "../routes/studentRegistration/RegistrationPersonalDetails";  
 

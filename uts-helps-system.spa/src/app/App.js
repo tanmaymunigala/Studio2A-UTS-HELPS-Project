@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 //Routes
 import * as Routes from "../routes/route";
 
- 
+
  
 import Style from "./Style.js";
 class App extends Component {
@@ -23,6 +23,7 @@ class App extends Component {
               component={Routes.RegistrationPersonalDetails}
             />
             <Route path="/Dashboard" component={Routes.Dashboard} />
+            <Route path="/Dashboard" component={Routes.Dashboard} />
             <Route path="/MyBooking" component={Routes.MyBooking} />
             <Route path="/Workshop" component={Routes.Workshop} />
             <Route path="/Admin" component={Routes.Admin} />
@@ -32,8 +33,8 @@ class App extends Component {
             <Route path ="/Advisiors" component={Routes.Advisiors}/>
             <Route path ="/WorkshopAdmin" component={Routes.WorkshopAdmin}/>
             <Route path ="/AdminDashboard" component={Routes.AdminDashboard}/>
-
-
+            <Route path ="/EmailTemplates" component={Routes.EmailTemplates}/>
+            <Route path ="/WaitingLists" component={Routes.WaitingLists}/>
             
             
            </Switch>
