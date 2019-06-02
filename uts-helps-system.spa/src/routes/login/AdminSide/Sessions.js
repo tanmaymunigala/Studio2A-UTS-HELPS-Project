@@ -1,12 +1,11 @@
-
 import React, {Component} from "react";
 //import {Link} from "react-router-dom";
 
-export default class Admin extends Component {
+export default class Sessions extends Component {
     render(){
         return(
             <div>
-                <label>Admin Login Goes Here</label>
+                <label>Admin Sessions Goes Here</label>
             </div>
         )
     }
