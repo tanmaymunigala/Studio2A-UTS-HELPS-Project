@@ -8,7 +8,7 @@ namespace uts_helps_system.api.ResourceManagement
     public static class CentralResourceManagement
     {
         // This string is the connection string which is used in Startup.cs to establish a connection to the database.
-        public const string DatabaseConnectionString = @"Server=localhost\SQLEXPRESS;Database=Uts_Helps_Core;Trusted_Connection=True;";
+        public const string DatabaseConnectionString = @"Server=localhost;Database=Uts_Helps_Core;Trusted_Connection=True;";
 
         // This integer is meant to indicate how many tokens are allowed to be managed by the system at the same time for each user. This value is used by the TokenManager.
         public const int UserTokenLimitPerUser = 3;
