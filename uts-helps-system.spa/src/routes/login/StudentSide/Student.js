@@ -13,7 +13,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
-import Style from "./Style"
+import Style from "./Style";
 export default class Login extends Component {
   state = {
     password: "",
@@ -127,7 +127,7 @@ export default class Login extends Component {
                     color="primary"
                   />
                 }
-                label="keep me logged in"
+                label="Keep me logged in"
               />
             </Grid>
 
@@ -149,7 +149,25 @@ export default class Login extends Component {
                 Log In
               </Button>
             </Grid>
+            <Grid item style={{marginTop:10 }}>
+              <Typography
+                style={{ fontFamily: "open-sans", color: "#000000" }}
+                variant="subtitle1"
+              >
+                Don't have an account?  <Link style={{textDecoration:'none' }} to="/RegistrationPersonalDetails">Register</Link> 
+              </Typography>
+            </Grid>
+            <Grid item  style={{marginBottom:10 }}>
+              <Typography
+                style={{ fontFamily: "open-sans", color: "#000000" }}
+                variant="subtitle1"
+              >
+                Forgot password  <Link>click here</Link> 
+              </Typography>
+            </Grid>
+
           </Grid>
+      
 
           {/* <Link to="/Dashboard"><button>Login</button></Link>
                 <div>

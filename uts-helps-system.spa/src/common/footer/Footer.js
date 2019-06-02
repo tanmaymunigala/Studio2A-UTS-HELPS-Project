@@ -23,17 +23,17 @@ function Footer({ children }) {
         <Grid item>
           <Typography style={{ color: "white" }} variant="h6">
             {" "}
-            About Us{" "}
+            <a style={{textDecoration:'none',color:'white'}}href="https://www.uts.edu.au/current-students/support/helps">About Us</a>
           </Typography>
         </Grid>
         <Grid item>
           <Typography style={{ color: "white" }} variant="h6">
-            FAQ
+          <a style={{textDecoration:'none',color:'white'}} href="https://www.uts.edu.au/current-students/support/helps">FAQ</a>
           </Typography>
         </Grid>
         <Grid item>
           <Typography style={{ color: "white" }} variant="h6">
-            Contact Us
+          <a style={{textDecoration:'none',color:'white'}} href="https://www.uts.edu.au/current-students/support/helps">Contact Us</a>
           </Typography>
         </Grid>
       </Grid>
