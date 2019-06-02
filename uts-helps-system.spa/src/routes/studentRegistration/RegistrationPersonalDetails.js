@@ -74,7 +74,7 @@ class Business extends Component {
           marginLeft: "auto",
           marginRight: "auto",
           backgroundImage: `url(${UTSregi})`,
-          opacity: 0.7,
+          opacity: 0.8,
           minHeight: 800,
           marginTop: 0
         }}
