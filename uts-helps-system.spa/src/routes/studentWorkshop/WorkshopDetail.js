@@ -12,7 +12,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   paper: {
-    //padding: theme.spacing(2),
+    padding: 10,
     margin: 'auto',
     maxWidth: 5000,
   },
@@ -31,21 +31,21 @@ function ComplexGrid(props) {
   return (
     <div className={classes.root}>
         <Card raised="true" style={{ background: "#81d4fa",marginTop:20 , marginBottom:20, marginLeft: 10, marginRight: 10,marginBottom:30 }} >
-        <CardHeader style={{fontFamily:"Times New Roman" }} title={"Dear StudentX, current workshops available to you are"}/>
+        <CardHeader style={{fontFamily:"Times New Roman" }} />
         <Grid item style={{  marginLeft: 10, marginRight: 10, marginBottom:20  }}>
         <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
+            <Grid item xs container direction="column" spacing={2} >
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1">
-                  Standard lice
+                  How to study 101
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
+                  CB01.05.101
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                  ID: 1030114
+                  22/5/2019
                 </Typography>
               </Grid>
               <Grid item>
