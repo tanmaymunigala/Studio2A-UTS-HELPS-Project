@@ -67,7 +67,6 @@ function CustomizedTable(props) {
         <TableBody>
           {rows.map(row => (
             <TableRow className={classes.row} key={row.id} component={Link} to="/WorkshopDetail">
-              
                 <CustomTableCell component="th" scope="row">
                   {row.name}
                 </CustomTableCell>
@@ -76,7 +75,6 @@ function CustomizedTable(props) {
                 <CustomTableCell align="right">{row.time}</CustomTableCell>
                 <CustomTableCell align="right">{row.room}</CustomTableCell>
                 <CustomTableCell align="right">{row.sessions}</CustomTableCell>
-              
             </TableRow>
           ))}
         </TableBody>
