@@ -25,6 +25,7 @@ class App extends Component {
             <Route path="/MyBooking" component={Routes.MyBooking} />
             <Route path="/Workshop" component={Routes.Workshop} />
             <Route path="/Admin" component={Routes.Admin} />
+            <Route path="/WorkshopDetail" component={Routes.WorkshopDetail} />
            </Switch>
         </BrowserRouter>
         <Routes.Footer />
