@@ -66,21 +66,26 @@ class Dashboard extends Component {
           >
             <Tab
               component={Link}
+              to="/Dashboard"
+              label=" Dashboard "
+              icon={<PersonPinIcon />}
+            />
+
+            <Tab
+              component={Link}
               to="/MyBooking"
               label=" MyBooking "
               icon={<PersonPinIcon />}
             />
+            
+
             <Tab
               component={Link}
               to="/Workshop"
               label="Workshop"
               icon={<PersonPinIcon />}
             />
-
-            <Tab label="Item Five" icon={<PersonPinIcon />} />
-            <Tab label="Item Six" icon={<PersonPinIcon />} />
-            <Tab label="Item Seven" icon={<PersonPinIcon />} />
-          </Tabs>
+            </Tabs>
         </AppBar>
         {value === 1 && <TabContainer>Item Two</TabContainer>}
         {value === 2 && <TabContainer>Item Three</TabContainer>}
