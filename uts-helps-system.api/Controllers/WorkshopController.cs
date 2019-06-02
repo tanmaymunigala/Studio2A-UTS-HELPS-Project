@@ -23,7 +23,7 @@ namespace uts_helps_system.api.Controllers
     
 
     [Route("CreateWorkshop/{WorkshopName}/{WorkshopDesc}/{WorkshopDateTime}")]
-    public bool CreateWorkshop(int workshopId, string workshopName, string workshopDesc, DateTime workshopDateTime){
+    public async Task<Boolean> CreateWorkshop(int workshopId, string workshopName, string workshopDesc, DateTime workshopDateTime){
         
         var WorkshopModel = new Workshop(){
             WorkshopName = workshopName,
@@ -32,10 +32,35 @@ namespace uts_helps_system.api.Controllers
 
         };
         _context.WorkshopValues.Add(WorkshopModel);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
         
         return true;
     }
+        [Route("ListWorkshops")]
+    public List<Workshop> ListWorkshops(){
+
+       return _context.WorkshopValues.ToList();
+
+    }
+
+
+        [Route("DeleteWorkshop/{workShopId}")]
+    public async Task<Boolean> DeleteWorkshop(int workshopId){
+        var FoundWorkshop = _context.WorkshopValues.Find(workshopId);
+        _context.WorkshopValues.Remove(FoundWorkshop);
+        await _context.SaveChangesAsync();
+
+       return true;
+
+    }
+
+            [Route("GetWorkshop/{workShopId}")]
+    public Workshop GetWorkshop(int workshopId){
+        var FoundWorkshop = _context.WorkshopValues.Find(workshopId);
+       return FoundWorkshop;
+
+    }
+
 
 
     
