@@ -1,7 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { Typography,withStyles } from "@material-ui/core";
-import utsLogo from "../../assets/pictures/utsFooter.PNG";
+import { Typography, withStyles } from "@material-ui/core";
  import Style from "./Style"
 
 function Footer({ children }) {
@@ -23,39 +22,19 @@ function Footer({ children }) {
       >
         <Grid item>
           <Typography style={{ color: "white" }} variant="h6">
-            <a
-              style={{ color: "white", textDecoration: "none" }}
-              href="https://www.uts.edu.au/current-students/support/helps"
-            >
-              {" "}
-              About Us
-            </a>
             {" "}
- 
+            About Us{" "}
           </Typography>
         </Grid>
         <Grid item>
           <Typography style={{ color: "white" }} variant="h6">
-            <a
-              style={{ color: "white", textDecoration: "none" }}
-              href="https://www.uts.edu.au/current-students/support/helps"
-            >
-              {" "}
-              FAQ
-            </a>
-
+            FAQ
           </Typography>
         </Grid>
         <Grid item>
           <Typography style={{ color: "white" }} variant="h6">
-            <a
-              style={{ color: "white", textDecoration: "none" }}
-              href="https://www.uts.edu.au/current-students/support/helps"
-            >
-              {" "}
-              Contact Us
-            </a>
-           </Typography>
+            Contact Us
+          </Typography>
         </Grid>
       </Grid>
 
