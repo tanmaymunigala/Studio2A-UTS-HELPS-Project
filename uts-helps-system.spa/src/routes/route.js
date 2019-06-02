@@ -16,3 +16,4 @@ export { default as RegistrationPersonalDetails } from "../routes/studentRegistr
 export { default as Dashboard } from "../routes/studentDashboard/Dashboard";
 export { default as MyBooking }  from '../routes/MyBooking';
 export { default as Workshop }from '../routes/studentWorkshop/Workshop';
+export { default as WorkshopDetail }from '../routes/studentWorkshop/WorkshopDetail';

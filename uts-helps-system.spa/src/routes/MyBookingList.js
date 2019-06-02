@@ -7,6 +7,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { Link } from "react-router-dom";
+
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -66,7 +68,7 @@ function CustomizedTable(props) {
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow className={classes.row} key={row.id}>
+            <TableRow className={classes.row} key={row.id} component={Link} to="/WorkshopDetail">
               <CustomTableCell component="th" scope="row">
                 {row.name}
               </CustomTableCell>

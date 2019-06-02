@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { Link } from "react-router-dom";
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -65,21 +66,37 @@ function CustomizedTable(props) {
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow className={classes.row} key={row.id}>
-              <CustomTableCell component="th" scope="row">
-                {row.name}
-              </CustomTableCell>
-              <CustomTableCell align="right">{row.startDate}</CustomTableCell>
-              <CustomTableCell align="right">{row.endDate}</CustomTableCell>
-              <CustomTableCell align="right">{row.time}</CustomTableCell>
-              <CustomTableCell align="right">{row.room}</CustomTableCell>
-              <CustomTableCell align="right">{row.sessions}</CustomTableCell>
+            <TableRow className={classes.row} key={row.id} component={Link} to="/WorkshopDetail">
+                <CustomTableCell component="th" scope="row">
+                  {row.name}
+                </CustomTableCell>
+                <CustomTableCell align="right">{row.startDate}</CustomTableCell>
+                <CustomTableCell align="right">{row.endDate}</CustomTableCell>
+                <CustomTableCell align="right">{row.time}</CustomTableCell>
+                <CustomTableCell align="right">{row.room}</CustomTableCell>
+                <CustomTableCell align="right">{row.sessions}</CustomTableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </Paper>
   );
+}
+
+function addRowHandlers() {
+  var table = document.getElementById("tableId");
+  var rows = table.getElementsByTagName("tr");
+  for (var i = 0; i < rows.length; i++) {
+    var currentRow = table.rows[i];
+    var createClickHandler = function(row) {
+      return function() {
+        var cell = row.getElementsByTagName("td")[0];
+        var id = cell.innerHTML;
+        alert("id:" + id);
+      };
+    };
+    currentRow.onclick = createClickHandler(currentRow);
+  }
 }
 
 CustomizedTable.propTypes = {
