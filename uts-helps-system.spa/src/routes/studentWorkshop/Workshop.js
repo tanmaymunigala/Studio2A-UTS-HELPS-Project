@@ -3,10 +3,8 @@ import WorkshopAvailable from "./WorkshopAvailable";
 import WorkshopUpcoming from "./WorkshopUpcoming";
 import TextField from "@material-ui/core/TextField";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
-import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
@@ -14,10 +12,31 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
 import { Card, CardHeader } from "@material-ui/core";
+import { Grid, AppBar, Tabs, Tab } from "@material-ui/core";
+import PersonPinIcon from "@material-ui/icons/PersonPin";
+import {
+  Avatar,
+  Collapse,
+  IconButton,
+  Typography,
+  withStyles
+} from "@material-ui/core";
+
+
+function TabContainer(props) {
+  return (
+    <Typography component="div" style={{ padding: 8 * 3 }}>
+      {props.children}
+    </Typography>
+  );
+}
+
+
 export class Workshop extends Component {
   state = {
     completed: 0,
-    open: false
+    open: false,
+    value: 0
   };
   // this is for linear Progression
   componentDidMount() {
@@ -46,10 +65,53 @@ export class Workshop extends Component {
     }
     this.setState({ open: false });
   };
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
 
   render() {
+    const{value} = this.state;
+    const{classes} = this.props;
+
     return (
       <div>
+        <AppBar position="static" color="default">
+          <Tabs
+            value={value}
+            onChange={this.handleChange}
+            variant="scrollable"
+            scrollButtons="on"
+            indicatorColor="primary"
+            textColor="primary"
+          >
+            <Tab
+              component={Link}
+              to="/Dashboard"
+              label=" Dashboard "
+              icon={<PersonPinIcon />}
+            />
+            
+        
+            <Tab
+              component={Link}
+              to="/MyBooking"
+              label=" MyBooking "
+              icon={<PersonPinIcon />}
+            />
+            <Tab
+              component={Link}
+              to="/Workshop"
+              label="Workshop"
+              icon={<PersonPinIcon />}
+            />
+            </Tabs>
+        </AppBar>
+        
+
+
         <Card raised="true" style={{ background: "#81d4fa",marginTop:20 , marginBottom:20, marginLeft: 10, marginRight: 10,marginBottom:30 }} >
         <CardHeader style={{fontFamily:"Times New Roman" }} title={"Dear StudentX, current workshops available to you are"}/>
         <Grid item style={{  marginLeft: 10, marginRight: 10, marginBottom:20  }}>
