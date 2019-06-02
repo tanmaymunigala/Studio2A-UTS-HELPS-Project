@@ -22,14 +22,17 @@ namespace uts_helps_system.api.Controllers
         }
     
 
-    [Route("CreateWorkshop/{WorkshopId}/{WorkshopName}/{WorkshopDesc}/{WorkshopDateTime}")]
-    public bool CreateWorkshop(int WorkshopId, string WorkshopName, string WorkshopDesc, DateTime WorkshopDateTime){
-        Workshop WorkshopModel = null;
-        WorkshopModel.WorkshopId = WorkshopId;
-        WorkshopModel.WorkshopName = WorkshopName;
-        WorkshopModel.WorkshopDesc = WorkshopDesc;
-        WorkshopModel.WorkshopDateTime = WorkshopDateTime;
+    [Route("CreateWorkshop/{WorkshopName}/{WorkshopDesc}/{WorkshopDateTime}")]
+    public bool CreateWorkshop(int workshopId, string workshopName, string workshopDesc, DateTime workshopDateTime){
+        
+        var WorkshopModel = new Workshop(){
+            WorkshopName = workshopName,
+            WorkshopDesc = workshopDesc,
+            WorkshopDateTime = workshopDateTime,
+
+        };
         _context.WorkshopValues.Add(WorkshopModel);
+        _context.SaveChanges();
         
         return true;
     }

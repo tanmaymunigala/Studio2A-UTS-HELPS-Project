@@ -8,6 +8,7 @@ using uts_helps_system.api.Enums;
 namespace uts_helps_system.api.Models
 {
     public class Workshop {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int WorkshopId { get; set; }
         public string WorkshopName { get; set; }
         public string WorkshopDesc { get; set; }
