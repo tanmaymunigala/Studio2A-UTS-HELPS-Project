@@ -4,12 +4,15 @@ const Style = theme => ({
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column",
-      maxWidth: 960,
+      maxWidth: 800,
       marginLeft: "auto",
       marginRight: "auto",
       marginTop: theme.spacing.unit * 2,
       marginBottom: theme.spacing.unit * 2,
-      padding: theme.spacing.unit * 2
+      padding: theme.spacing.unit * 2,
+      backgroundColor:'#f5f5f5',
+      borderRadius: 25
+
     },
     appbar: {
       alignItems: "center"
@@ -42,7 +45,7 @@ const Style = theme => ({
     },
     column: {
       padding: theme.spacing.unit * 2,
-      margin: 20
+      margin: 5
     },
     link: {
       textDecoration: "none"

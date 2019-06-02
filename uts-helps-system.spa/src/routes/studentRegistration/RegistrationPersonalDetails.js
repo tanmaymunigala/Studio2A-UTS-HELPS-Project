@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Style from "./Style";
 import { TextField, AppBar, Toolbar, Typography } from "@material-ui/core";
 import { Grid, Button, Paper, Divider } from "@material-ui/core";
+import GenderSelect from "./GenderSelect"
 //Uts Picture
 import UTSregi from "../../assets/pictures/uts-reg.PNG";
 
@@ -71,7 +72,7 @@ class Business extends Component {
           marginLeft: "auto",
           marginRight: "auto",
           backgroundImage: `url(${UTSregi})`,
-          opacity: 0.7,
+          opacity: 0.8,
           minHeight: 800,
           marginTop: 0
         }}
@@ -83,7 +84,7 @@ class Business extends Component {
             <Link to="/signup" className={classes.link}>
               <AppBar position="static" className={classes.appbar}>
                 <Toolbar>
-                  <Typography variant="h6" color="inherit">
+                  <Typography variant="h3" color="inherit">
                     Student Registration
                   </Typography>
                 </Toolbar>
@@ -186,7 +187,7 @@ class Business extends Component {
                     </Grid>
                     {/* GenderSelect */}
                     <Grid item xs={12}>
-                      {/* <GenderSelect /> */}
+                      <GenderSelect />
                     </Grid>
                     <Grid item xs={12}>
                       <TextField
