@@ -26,16 +26,15 @@ class App extends Component {
             <Route path="/MyBooking" component={Routes.MyBooking} />
             <Route path="/Workshop" component={Routes.Workshop} />
             <Route path="/Admin" component={Routes.Admin} />
+
+            <Route path ="/WorkshopDetail" component={Routes.WorkshopDetail} />
             <Route path ="/AboutUs" component={Routes.AboutUs}/>
             <Route path ="/Sessions" component={Routes.Sessions}/>
             <Route path ="/Main" component={Routes.Main}/>
             <Route path ="/Advisiors" component={Routes.Advisiors}/>
             <Route path ="/WorkshopAdmin" component={Routes.WorkshopAdmin}/>
             <Route path ="/AdminDashboard" component={Routes.AdminDashboard}/>
-
-
-            
-            
+      
            </Switch>
         </BrowserRouter>
         <Routes.Footer />
